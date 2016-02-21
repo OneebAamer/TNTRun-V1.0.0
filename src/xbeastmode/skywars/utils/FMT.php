@@ -42,4 +42,34 @@ class FMT{
     public static function b($message){
         return color::clean($message, true);
     }
+    /**
+     * @param $message
+     * @return string
+     */
+    public static function b2($message){
+        $symbol = "&";
+        $message = str_replace($symbol."0", "", $message);
+        $message = str_replace($symbol."1", "", $message);
+        $message = str_replace($symbol."2", "", $message);
+        $message = str_replace($symbol."3", "", $message);
+        $message = str_replace($symbol."4", "", $message);
+        $message = str_replace($symbol."5", "", $message);
+        $message = str_replace($symbol."6", "", $message);
+        $message = str_replace($symbol."7", "", $message);
+        $message = str_replace($symbol."8", "", $message);
+        $message = str_replace($symbol."9", "", $message);
+        $message = str_replace($symbol."a", "", $message);
+        $message = str_replace($symbol."b", "", $message);
+        $message = str_replace($symbol."c", "", $message);
+        $message = str_replace($symbol."d", "", $message);
+        $message = str_replace($symbol."e", "", $message);
+        $message = str_replace($symbol."f", "", $message);
+        $message = str_replace($symbol."k", "", $message);
+        $message = str_replace($symbol."l", "", $message);
+        $message = str_replace($symbol."m", "", $message);
+        $message = str_replace($symbol."n", "", $message);
+        $message = str_replace($symbol."o", "", $message);
+        $message = str_replace($symbol."r", "", $message);
+        return $message;
+    }
 }
