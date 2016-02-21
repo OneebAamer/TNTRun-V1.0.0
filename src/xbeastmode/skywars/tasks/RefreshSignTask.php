@@ -29,20 +29,23 @@ class SignRefreshTask extends PluginTask{
         foreach($this->plugin->getServer()->getLevels() as $lvl){
             foreach($lvl->getTiles() as $t){
                 if($t instanceof Sign){
-                    $l2 = FMT::b($t->getText()[1]);
-                    if(strtolower($l2) === "skywars" and isset($this->plugin->skyWarsConfig()->getAll()[$l2])) {
+                    $s2 = FMT::b($t->getText()[1]);
+                    if(strtolower($s2) === $this->plugin->getConfig()->get("sw_sign_line_1") and isset($this->plugin->skyWarsConfig()->getAll()[$s2])) {
                         $l1 = FMT::colorMessage($this->plugin->getConfig()->get("sw_sign_line_1"));
                         $l2 = FMT::colorMessage($this->plugin->getConfig()->get("sw_sign_line_2"));
                         $l3 = FMT::colorMessage($this->plugin->getConfig()->get("sw_sign_line_3"));
                         $l4 = FMT::colorMessage($this->plugin->getConfig()->get("sw_sign_line_4"));
+                        $sw = new SWManagement($this->plugin);
                         $count = null;
-                        if(isset((new SWManagement($this->plugin))->getPlayers()[$l2])){
-                            $count = count((new SWManagement($this->plugin))->getPlayers()[$l2]);
+                        $max = (new SWGame($this->plugin))->getMaxPlayers($s2);
+                        $status = $sw->getStatus($s2);
+                        if(isset($sw->getPlayers()[$s2])){
+                            $count = count((new SWManagement($this->plugin))->getPlayers()[$s2]);
                         }else{
                             $count = 0;
                         }
-                        $max = (new SWGame($this->plugin))->getMaxPlayers($l2);
-                        //TODO: set sign text
+                        $t->setText($l1, str_replace("%game%", $s2, $l2),
+                            str_replace(["%count%", "%max%"], [$count, $max], $l3), str_replace("%status%", $status, $l4));
                     }
                 }
             }
