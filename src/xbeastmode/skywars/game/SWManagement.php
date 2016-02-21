@@ -62,6 +62,9 @@ class SWManagement extends SWGame{
             $p->sendMessage(str_replace("%game%", $game, $msg));
             return;
         }
+        $join = new PlayerJoinGameEvent($this->plugin, $p, $game);
+        $this->plugin->getServer()->getPluginManager()->callEvent($join);
+        if($join->isCancelled()) return;
         $slot = $this->plugin->skyWarsConfig()->getAll()["SW_Games"][$game]["Slots"]["Slot".$this->counters[$game]];
         $pos = explode(":",$slot);
         $x = $pos[0];
@@ -70,8 +73,8 @@ class SWManagement extends SWGame{
         $level = $this->getGameLevel($game);
         $p->teleport(new Position($x,$y,$z,$level),0,0);
         $this->counters[$game] -= 1;
-        $join = new PlayerJoinGameEvent($this->plugin, $p, $game);
-        $this->plugin->getServer()->getPluginManager()->callEvent($join);
+        $msg = $this->plugin->getMessage("Joined_Game");
+        $this->broadcastMessage($game, str_replace("%player%", $p->getName(), $msg));
         $this->players[$game][spl_object_hash($p)] = $p;
         if(count($this->players[$game]) >= $this->getMinPlayers($game)){
             $this->status[$game] = "waiting";
