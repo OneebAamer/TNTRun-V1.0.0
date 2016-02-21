@@ -29,8 +29,10 @@ class SignRefreshTask extends PluginTask{
         foreach($this->plugin->getServer()->getLevels() as $lvl){
             foreach($lvl->getTiles() as $t){
                 if($t instanceof Sign){
+                    $s3 = FMT::b($t->getText()[0]);
                     $s2 = FMT::b($t->getText()[1]);
-                    if(strtolower($s2) === $this->plugin->getConfig()->get("sw_sign_line_1") and isset($this->plugin->skyWarsConfig()->getAll()[$s2])) {
+                    $s1 = FMT::b($this->plugin->getConfig()->get("sw_sign_line_1"));
+                    if(strtolower($s3) === $s1 and isset($this->plugin->skyWarsConfig()->getAll()[$s2])) {
                         $l1 = FMT::colorMessage($this->plugin->getConfig()->get("sw_sign_line_1"));
                         $l2 = FMT::colorMessage($this->plugin->getConfig()->get("sw_sign_line_2"));
                         $l3 = FMT::colorMessage($this->plugin->getConfig()->get("sw_sign_line_3"));
