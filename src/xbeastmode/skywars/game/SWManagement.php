@@ -36,6 +36,20 @@ class SWManagement extends SWGame{
         }
     }
     /**
+     * @param $game
+     * @return string
+     */
+    public function getStatus($game){
+        return $this->status[$game];
+    }
+    /**
+     * @param $game
+     * @param $status
+     */
+    public function setStatus($game, $status){
+        $this->status[$game] = (string)$status;
+    }
+    /**
      * @param Player $p
      * @param $game
      */
@@ -60,9 +74,10 @@ class SWManagement extends SWGame{
         $this->plugin->getServer()->getPluginManager()->callEvent($join);
         $this->players[$game][spl_object_hash($p)] = $p;
         if(count($this->players[$game]) >= $this->getMinPlayers($game)){
-
+            $this->status[$game] = "waiting";
         }else{
             $this->plugin->makeTipTask($game);
+            $this->status[$game] = "waiting";
         }
     }
 }
