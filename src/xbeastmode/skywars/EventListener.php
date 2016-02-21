@@ -23,8 +23,9 @@ class EventListener implements Listener{
         $l = $e->getLines();
         $p = $e->getPlayer();
         if($p->isOp() or $p->hasPermission("sw.sign.create")){
+            $s1 = FMT::colorMessage($this->plugin->getConfig()->get("sw_sign_line_1"));
             if(strtolower($l[0]) === "skywars" and isset($this->plugin->skyWarsConfig()->getAll()[$l[1]])){
-                $e->setLine(0, $l[0]);
+                $e->setLine(0, $s1);
                 $e->setLine(1, $l[1]);
                 $p->sendMessage(FMT::colorMessage("&aSuccessfully created game sign for game '&f".$l[1]."&a'!"));
             }elseif(strtolower($l[0]) === "skywars" and !isset($this->plugin->skyWarsConfig()->getAll()[$l[1]])){
