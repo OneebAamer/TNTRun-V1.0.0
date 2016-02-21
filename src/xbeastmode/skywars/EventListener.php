@@ -24,8 +24,8 @@ class EventListener implements Listener{
         $p = $e->getPlayer();
         if($p->isOp() or $p->hasPermission("sw.sign.create")){
             if(strtolower($l[0]) === "skywars" and isset($this->plugin->skyWarsConfig()->getAll()[$l[1]])){
-                $e->setLine(0, FMT::colorMessage($this->plugin->getConfig()->get("sw_sign_line_1")));
-                $e->setLine(1, FMT::colorMessage($this->plugin->getConfig()->get("sw_sign_line_2")));
+                $e->setLine(0, $l[0]);
+                $e->setLine(1, $l[1]);
                 $p->sendMessage(FMT::colorMessage("&aSuccessfully created game sign for game '&f".$l[1]."&a'!"));
             }elseif(strtolower($l[0]) === "skywars" and !isset($this->plugin->skyWarsConfig()->getAll()[$l[1]])){
                 $p->sendMessage(FMT::colorMessage("&cError: game does not exist."));
@@ -44,8 +44,6 @@ class EventListener implements Listener{
             if(strtolower($game) === "skywars" and isset($this->plugin->skyWarsConfig()->getAll()[$game])){
                 $sw = new SWManagement($this->plugin);
                 $sw->tpToOpenSlot($p, $game);
-                $msg = $this->plugin->getMessage("Joined_Game");
-                $sw->broadcastMessage($game, str_replace("%player%", $p->getName(), $msg));
             }
         }
     }
