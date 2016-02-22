@@ -41,6 +41,6 @@ class PlayerJoinGameEvent extends SkyWarsEvent implements Cancellable{
      * @param $game
      */
     public function setGame($game){
-        $this->game = $game;
+        $this->game = (string)$game;
     }
 }
