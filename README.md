@@ -1,4 +1,4 @@
-#[Inactive] SkyWars for PocketMine-MP
+#[Developement] SkyWars for PocketMine-MP
 ---------
 ```      
 * This plugin is imcomplete, it is in developement by xBeastMode
