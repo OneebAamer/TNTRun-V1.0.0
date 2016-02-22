@@ -32,7 +32,7 @@ class TipTask extends PluginTask{
         foreach($players as $p){
             if($p instanceof Player){
                 $msg = FMT::colorMessage($this->plugin->getMessage("Waiting_Tip"));
-                $p->sendMessage($msg);
+                $p->sendTip($msg);
             }
         }
     }
