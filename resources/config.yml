@@ -1,15 +1,8 @@
 ---
-#SkyWars config by xBeastMode
-#line 1 is for the SkyWars logo
-sw_sign_line_1: "&b&a-=[&eSky&6Wars&a]=-"
-#line 2 is for the game name
-#use %game% to replace the game
-sw_sign_line_2: "&b%game%"
-#line 3 is for the player count
-#use %count% to get the players playing
-#use %max% to get the max players that can play
-sw_sign_line_3: "&c%count%&f/&a%max%"
-#line 4 is for the status
-#statuses are: open, waiting, running
-sw_sign_line_4: "&e%status%"
+#TNTRun config by LittleBigMC
+#The Arena Postition where they all get teleported:
+XYZ: 128,5,128
+#The ID of The Block That Breaks(Default:TNT)
+ID: 46
+#End of Config
 ...
