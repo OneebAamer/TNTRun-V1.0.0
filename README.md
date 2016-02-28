@@ -1,13 +1,7 @@
-#[Developement] SkyWars for PocketMine-MP
+#[Developement] TNTRun for PocketMine-MP
 ---------
 ```      
-* This plugin is imcomplete, it is in developement by xBeastMode
+* This plugin is imcomplete, it is in developement by LittleBigMC
 !!!DO NOT DOWNLOAD CODE!!!
 ```      
 ---------
-
-TO DO
-------
-+ Add commands
-+ Waiting tasks
-+ Map resetter
