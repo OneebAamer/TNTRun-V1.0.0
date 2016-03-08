@@ -1,0 +1,25 @@
+---
+#Config:
+#Position of the wait arena:
+wx: 128
+wy: 5
+wz: 128
+#Position of Game Arena:
+gx: 135
+gy: 5
+gz: 128
+#Postition of Lobby:
+lx: 0
+ly: 3
+lz: 0
+#Game settings:
+maxplayers: 8
+wait_time: 30
+game_time: 300
+#ID of the block that will be destriyed when stepped on. Block1 = First block
+#Block2 = Second block
+#Block3 = Third block
+Block1: 133
+Block2: 41
+Block3: 152
+...
