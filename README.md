@@ -1,7 +1,6 @@
 #[Developement] TNTRun for PocketMine-MP
 ---------
 ```      
-* This plugin is imcomplete, it is in developement by LittleBigMC
-!!!DO NOT DOWNLOAD CODE!!!
+TNTRun V1.0.0 By LittleBigMC. Credits to @PalkiaDude and @InfinityGamer for helping a guy out ;D
 ```      
 ---------
