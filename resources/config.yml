@@ -1,8 +1,0 @@
----
-#TNTRun config by LittleBigMC
-#The Arena Postition where they all get teleported:
-XYZ: 128,5,128
-#The ID of The Block That Breaks(Default:TNT)
-ID: 46
-#End of Config
-...
