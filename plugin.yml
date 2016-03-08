@@ -1,0 +1,13 @@
+name: TNTRun
+author: LittleBigMC
+version: 1.0
+api: [1.13.0]
+description: Dont Stop Now!
+main: LittleBigMC\TNTRun\Main
+
+commands:
+  tntrun:
+     description: "main command"
+     usage: "/tntrun <join|quit>"
+     permission: tntrun.cmd
+    
