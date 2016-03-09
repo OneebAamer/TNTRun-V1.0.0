@@ -16,7 +16,7 @@ lz: 0
 maxplayers: 8
 wait_time: 30
 game_time: 300
-#ID of the block that will be destriyed when stepped on. Block1 = First block
+#ID of the block that will be destroyed when stepped on. Block1 = First block
 #Block2 = Second block
 #Block3 = Third block
 Block1: 133
