@@ -8,6 +8,6 @@ main: LittleBigMC\TNTRun\Main
 commands:
   tntrun:
      description: "main command"
-     usage: "/tntrun <join|quit>"
+     usage: "/tntrun <help|help2>"
      permission: tntrun.cmd
     
